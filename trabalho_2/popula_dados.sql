@@ -38,3 +38,7 @@ update filmes set categoria = 2 where id = 4;
 
 insert into Funcionarios values
 (10, 'Luana', 'Pantanal', 98081000, 'Floripa', 3000, 'N', '1111');
+
+
+insert into clientes values (2, 'Maria', 'Rua 20', 987, 'Palhoça', null, '12312');
+insert into clientes values (3, 'Pedro', 'Rua 60', 987, 'Biguaçu', 1, '12321312');

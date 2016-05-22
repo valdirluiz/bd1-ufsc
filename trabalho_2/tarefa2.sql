@@ -24,4 +24,20 @@ select filmes.titulo, estilos.nome from filmes
   where categorias.nome = 'Lançamento';
 
 --Questão 6
-select nome, cpf from funcionarios where salario > any  (select salario from funcionarios where turno = 'N') and turno in ('T', 'M') ;
+select nome, cpf from funcionarios where salario > any
+(select salario from funcionarios where turno = 'N') and turno in ('T', 'M') ;
+
+--Questão 7
+select  nome, cidade, endereco from Funcionarios where turno in ('M', 'T')
+union
+select nome, cidade, endereco from clientes join reservas on clientes.id = reservas.id;
+
+--Questão 8
+select c1.nome, c1.cpf, c2.nome as nome_responsavel, c2.cpf as CPF_responsavel
+from clientes c1 left join clientes c2 on c1.responsavel = c2.id;
+
+--Questão 9
+select nome, cpf, count(*) as total_locacoes from funcionarios
+join locacoes on funcionarios.id = locacoes.funcionario
+where datar between '2016-04-01' and '2016-04-30'
+group by nome, cpf order by total_locacoes desc limit 10;
