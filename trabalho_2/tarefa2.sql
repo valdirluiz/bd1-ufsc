@@ -41,3 +41,14 @@ select nome, cpf, count(*) as total_locacoes from funcionarios
 join locacoes on funcionarios.id = locacoes.funcionario
 where datar between '2016-04-01' and '2016-04-30'
 group by nome, cpf order by total_locacoes desc limit 10;
+
+--Questão 10
+select copias.id, copias.filme from copias
+join filmes on filmes.id = copias.filme where filmes.titulo = 'X-Men 3'
+and not exists  ( select * from reservas where id = copias.id and filme = copias.filme and datar <= '2016-05-20' and datapd >= '2016-05-20')
+and not exists  (select * from locacoes where id = copias.id and filme = copias.filme and datar <= '2016-05-20' and datapd >= '2016-05-20' and datad is null);
+
+--Questão 11
+select filmes.id, filmes.titulo from filmes
+join categorias on filmes.categoria = categorias.id
+where categorias.nome = 'Lançamento' and (select count(*) from copias where copias.filme = filmes.id) =1;

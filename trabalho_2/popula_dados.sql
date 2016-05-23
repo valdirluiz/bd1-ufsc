@@ -42,3 +42,16 @@ insert into Funcionarios values
 
 insert into clientes values (2, 'Maria', 'Rua 20', 987, 'Palhoça', null, '12312');
 insert into clientes values (3, 'Pedro', 'Rua 60', 987, 'Biguaçu', 1, '12321312');
+
+insert into filmes values(5, 'X-Men 3', 2, 2010,  2, 1);
+
+insert into copias values(6,5, 'BlueRay', null);
+insert into copias values(7,5, 'BlueRay', null);
+insert into copias values(8,5, 'BlueRay', null);
+insert into copias values(9,5, 'BlueRay', null);
+insert into copias values(10,5, 'BlueRay', null);
+
+insert into locacoes values(6,5,1,'2016-05-19', '2016-05-21', 1, null) ;
+insert into locacoes values(7,5,1,'2016-05-20', '2016-05-21', 1, null) ;
+insert into locacoes values(8,5,1,'2016-05-12', '2016-05-13', 1, '2016-05-13') ;
+insert into reservas values(9,5,1,'2016-05-19', '2016-05-21', 1, '2016-05-18') ;
