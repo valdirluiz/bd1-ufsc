@@ -9,7 +9,7 @@ update funcionarios  set salario = salario * 1.05 where id in(
 );
 
 --Questão 3
-select * from funcionarios where cidade in ('Palhoça', 'Biguaçu') order by cpf, salario desc;
+select cpf, nome, salario from funcionarios where cidade in ('Palhoça', 'Biguaçu') order by cpf, salario desc;
 
 --Questão 4
 select avg(preco) as media_precos from filmes
@@ -30,7 +30,8 @@ select nome, cpf from funcionarios where salario > any
 --Questão 7
 select  nome, cidade, endereco from Funcionarios where turno in ('M', 'T')
 union
-select nome, cidade, endereco from clientes join reservas on clientes.id = reservas.id;
+select nome, cidade, endereco from clientes join reservas on clientes.id = reservas.cliente;
+
 
 --Questão 8
 select c1.nome, c1.cpf, c2.nome as nome_responsavel, c2.cpf as CPF_responsavel
