@@ -54,7 +54,7 @@ join categorias on filmes.categoria = categorias.id
 where categorias.nome = 'Lançamento' and (select count(*) from copias where copias.filme = filmes.id) =1;
 
 --Questão 12
-select * from clientes where not exists (
+select clientes.id, clientes.nome, clientes.fone from clientes where not exists (
 
 	select * from copias where midia = 'VHS' and tipo = 'Legendado' and
 
